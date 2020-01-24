@@ -30,7 +30,7 @@ $screen_cmd "cd /opt && git clone https://github.com/jrspruitt/ubi_reader && cd 
 grok_error
 
 # Install yaffshiv to extract YAFFS file systems
-$screen_cmd "cd /opt && git clone https://github.com/devttys0/yaffshiv && cd /op/yaffshiv && python setup.py install ${assess_update_errors}"
+$screen_cmd "cd /opt && git clone https://github.com/devttys0/yaffshiv && cd /opt/yaffshiv && python setup.py install ${assess_update_errors}"
 grok_error
 
 # Install unstuff (closed source) to extract StuffIt archive files

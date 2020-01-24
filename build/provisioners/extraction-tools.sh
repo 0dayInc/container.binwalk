@@ -23,7 +23,7 @@ $screen_cmd "cd /opt && git clone https://github.com/sviehb/jefferson && cd /opt
 grok_error
 
 # Install ubi_reader to extract UBIFS file systems
-$screen_cmd "${apt} install -y liblzo2-dev python-lzo ${assess_update_errors}"
+$screen_cmd "${apt} install -y liblzo2-dev python3-lzo ${assess_update_errors}"
 grok_error
 
 $screen_cmd "cd /opt && git clone https://github.com/jrspruitt/ubi_reader && cd /opt/ubi_reader && python setup.py install ${assess_update_errors}"

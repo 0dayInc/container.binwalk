@@ -23,7 +23,7 @@ $ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -
 ```
 or
 ```
-$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_DIR> -type f -execdirbinwalk -Me {} \; 2> /tmp/binwalk_error.log"
+$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_DIR> -type f -execdir binwalk -Me {} \; 2> /tmp/binwalk_error.log"
 ```
 
 ## Contributing:

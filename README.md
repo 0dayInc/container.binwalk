@@ -14,12 +14,18 @@ container.binwalk starts with a base container of Kali rolling.  From there binw
 
 ## Usage:
 ```
-$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -Me /tmp/<your firmware file>"
+$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -Me /tmp/<your firmware file> 2> /tmp/binwalk_error.log"
 ```
 or
 ```
 $ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_DIR> -type f -execdir binwalk -Me {} \; 2> /tmp/binwalk_error.log"
 ```
+
+We leverage:
+```
+... 2> /tmp/binwalk_error.log
+```
+to log any errors that may be used to improve upon the build process (i.e. implement new extraction tools, address bugs, etc.)
 
 ## Contributing:
 If you're interested in contributing to this project, fork, make changes, and submit a pull request.

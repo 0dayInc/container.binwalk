@@ -10,17 +10,20 @@ container.binwalk starts with a base container of Kali rolling.  From there binw
 
 ## Dependencies:
 * Docker Desktop
-* Vagrant
 * Packer (If you're interested in contributing - see Contributing)  
 
 ## Installation:
 ```
-git clone https://github.com/0dayinc/container.binwalk && cd container.binwalk && ./install.sh
+$ git clone https://github.com/0dayinc/container.binwalk && cd container.binwalk
 ```
 
 ## Usage:
 ```
-docker run -it container.binwalk binwalk
+$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -Me /tmp/<your firmware file>"
+```
+or
+```
+$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_DIR> -type f -execdirbinwalk -Me {} \; 2> /tmp/binwalk_error.log"
 ```
 
 ## Contributing:

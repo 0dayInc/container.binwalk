@@ -23,7 +23,6 @@ docker_cmd = [
 ]
 
 Vagrant.configure(API_VERSION) do |config|
-  config.ssh.username = 'root'
   config.vm.define docker_container_target do
     config.vm.synced_folder('.', '/vagrant', disabled: true)
     config.vm.provider :docker do |d|
@@ -32,7 +31,6 @@ Vagrant.configure(API_VERSION) do |config|
       d.create_args = docker_create_args
       d.cmd = docker_cmd
       d.volumes = ['/tmp:/tmp']
-      d.has_ssh = true
     end
   end
 end

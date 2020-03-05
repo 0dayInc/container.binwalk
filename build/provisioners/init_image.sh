@@ -9,18 +9,6 @@ apt install -y screen
 $screen_cmd "${apt} install -y dialog ${assess_update_errors}"
 grok_error
 
-$screen_cmd "${apt} install -y python ${assess_update_errors}"
-grok_error
-
-$screen_cmd "${apt} install -y python-pip ${assess_update_errors}"
-grok_error
-
-$screen_cmd "${apt} install -y python3 ${assess_update_errors}"
-grok_error
-
-$screen_cmd "${apt} install -y python3-pip ${assess_update_errors}"
-grok_error
-
 $screen_cmd "${apt} update ${assess_update_errors}"
 grok_error
 
@@ -34,6 +22,9 @@ $screen_cmd "${apt} install -y sudo ${assess_update_errors}"
 grok_error
 
 $screen_cmd "${apt} install -y curl ${assess_update_errors}"
+grok_error
+
+$screen_cmd "${apt} install -y wget ${assess_update_errors}"
 grok_error
 
 $screen_cmd "${apt} install -y gnupg2 ${assess_update_errors}"

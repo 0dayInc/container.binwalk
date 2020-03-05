@@ -1,6 +1,7 @@
 #!/bin/bash --login
 cat >/etc/profile.d/globals.sh <<'EOF'
 #!/bin/bash --login
+export TERM=xterm
 screen_session=`basename ${0} .sh`
 screen_cmd="screen -L -S ${screen_session} -d -m /bin/bash --login -c"
 assess_update_errors='|| echo IMAGE_ABORT && exit 1'

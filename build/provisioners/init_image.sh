@@ -1,6 +1,8 @@
 #!/bin/bash --login
 source /etc/profile.d/globals.sh
 
+apt update
+apt install -y apt-utils
 apt install -y screen
 
 $screen_cmd "${apt} update ${assess_update_errors}"

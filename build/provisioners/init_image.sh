@@ -24,6 +24,9 @@ grok_error
 $screen_cmd "${apt} install -y curl ${assess_update_errors}"
 grok_error
 
+$screen_cmd "${apt} install -y wget ${assess_update_errors}"
+grok_error
+
 $screen_cmd "${apt} install -y gnupg2 ${assess_update_errors}"
 grok_error
 

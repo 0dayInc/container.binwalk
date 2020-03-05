@@ -9,7 +9,7 @@ $screen_cmd "ln -sf /opt/firmware-mod-kit/trunk/src/cramfs-2.x/cramfsck /usr/loc
 grok_error
 
 # Install sasquatch to extract non-standard SquashFS images
-$screen_cmd "${apt} install -y zlib1g-dev liblzma-dev liblzo2-dev ${assess_update_errors}"
+$screen_cmd "${apt} install -y zlib1g-dev lzma liblzma-dev liblzo2-dev ${assess_update_errors}"
 grok_error
 
 $screen_cmd "cd /opt && git clone https://github.com/devttys0/sasquatch && cd /opt/sasquatch && ./build.sh ${assess_update_errors}"

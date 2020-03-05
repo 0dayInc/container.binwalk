@@ -1,9 +1,25 @@
 #!/bin/bash --login
 source /etc/profile.d/globals.sh
 
+echo "deb-src http://http.kali.org/kali kali-rolling main non-free contrib" | tee -a /etc/apt/sources.list
 apt update
 apt install -y apt-utils
 apt install -y screen
+
+$screen_cmd "${apt} install -y dialog ${assess_update_errors}"
+grok_error
+
+$screen_cmd "${apt} install -y python ${assess_update_errors}"
+grok_error
+
+$screen_cmd "${apt} install -y python-pip ${assess_update_errors}"
+grok_error
+
+$screen_cmd "${apt} install -y python3 ${assess_update_errors}"
+grok_error
+
+$screen_cmd "${apt} install -y python3-pip ${assess_update_errors}"
+grok_error
 
 $screen_cmd "${apt} update ${assess_update_errors}"
 grok_error

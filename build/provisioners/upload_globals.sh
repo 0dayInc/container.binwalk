@@ -11,7 +11,6 @@ debconf_set='/usr/bin/debconf-set-selections'
 apt="DEBIAN_FRONTEND=noninteractive apt -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confnew'"
 
 grok_error() {
-  sleep 3
   while true; do
     # Wait until screen exits session
     screen -ls | grep $screen_session

@@ -20,7 +20,6 @@
     "scripts": [
       "provisioners/upload_globals.sh",
       "provisioners/init_image.sh",
-      "provisioners/python-pip.sh",
       "provisioners/python3-pip.sh",
       "provisioners/python3-virtualenv.sh",
       "provisioners/python3-lzma.sh",

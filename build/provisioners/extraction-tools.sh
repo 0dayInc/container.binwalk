@@ -2,7 +2,7 @@
 source /etc/profile.d/globals.sh
 
 # Binwalk relies on multiple external utilties in order to automatically extract/decompress files and data
-$screen_cmd "${apt} install -y unrar unzip mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsswap squashfs-tools sleuthkit default-jdk lzop srecord firmware-mod-kit forensics-extra ${assess_update_errors}"
+$screen_cmd "${apt} install -y qpdf unrar unzip mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsswap squashfs-tools sleuthkit default-jdk lzop srecord firmware-mod-kit forensics-extra ${assess_update_errors}"
 grok_error
 
 $screen_cmd "ln -sf /opt/firmware-mod-kit/trunk/src/cramfs-2.x/cramfsck /usr/local/bin/cramfsck  ${assess_update_errors}"
@@ -12,8 +12,8 @@ grok_error
 $screen_cmd "${apt} install -y zlib1g-dev lzma liblzma-dev liblzo2-dev ${assess_update_errors}"
 grok_error
 
-# $screen_cmd "cd /opt && git clone https://github.com/devttys0/sasquatch && cd /opt/sasquatch && ./build.sh ${assess_update_errors}"
-# grok_error
+$screen_cmd "cd /opt && git clone https://github.com/devttys0/sasquatch && cd /opt/sasquatch && ./build.sh ${assess_update_errors}"
+grok_error
 
 # Install jefferson to extract JFFS2 file systems
 $screen_cmd "pip install cstruct ${assess_update_errors}"

@@ -28,11 +28,11 @@ container.binwalk starts with a base container of Kali rolling.  From there binw
 
 ## **Usage** ##
 ```
-$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -Me /tmp/<TARGET_FIRMWARE_FILE> 2> /tmp/binwalk_error.log"
+$ docker run --privileged --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "binwalk -Me /tmp/<TARGET_FIRMWARE_FILE> 2> /tmp/binwalk_error.log"
 ```
 or
 ```
-$ docker run --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_FIRMWARE_DIR> -type f -execdir binwalk -Me {} \; 2> /tmp/binwalk_error.log"
+$ docker run --privileged --volume /tmp:/tmp --rm -it 0dayinc/container.binwalk -c "find /tmp/<TARGET_FIRMWARE_DIR> -type f -execdir binwalk -Me {} \; 2> /tmp/binwalk_error.log"
 ```
 
 We leverage:
